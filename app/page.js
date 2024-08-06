@@ -1,113 +1,250 @@
+"use client";
+import { useState } from "react";
 import Image from "next/image";
 
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const toggleMobileMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
+    <>
+      <header>
+        <a href="#" className="logo-holder">
+          <div className="logo-text">Welcome!</div>
+        </a>
+        <nav>
+          <ul id="menu" className={menuOpen ? "active" : ""}>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+            <li>
+              <a href="#projects">Projects</a>
+            </li>
+            <li>
+              <a href="mailto:rahul4nair35@gmail.com" className="button">
+                Contact Me
+              </a>
+            </li>
+          </ul>
+          <a href="#" className="mobile-toggle" onClick={toggleMobileMenu}>
+            <svg
+              className="w-6 h-6 text-gray-800 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-width="2"
+                d="M5 7h14M5 12h14M5 17h10"
+              />
+            </svg>
           </a>
-        </div>
-      </div>
-
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+        </nav>
+      </header>
+      <main>
+        <section className="hero container">
+          <div className="hero-blue">
+            <div>
+              <h1>
+                <small>Hi I'm</small>
+                Rahul Markasserithodi
+              </h1>
+              <p>
+                A Software engineering student at UNSW with a passion for
+                Artificial Intelligence and Business analytics. I also hold a
+                deep interest in public speaking and music.
+                <span>
+                  I'm deeply interested in AI and Machine Learning and how it
+                  would shape our upcoming future.
+                </span>
+              </p>
+              <div className="call-to-action">
+                <a href="./rahulResume.pdf" className="button black">
+                  {" "}
+                  View Resume{" "}
+                </a>
+                <a
+                  href="mailto:rahul4nair35@gmail.com"
+                  className="button white"
+                >
+                  Contact Me
+                </a>
+              </div>
+              <div className="social-links">
+                <a href="https://github.com/Rahulmarkasserithodi">
+                  <img src="./imgs/github.png" alt="GitHub" width="48" />
+                </a>
+                <a href="https://www.linkedin.com/in/rahul-markasserithodi-a79750225/">
+                  <img src="./imgs/linkedin.png" alt="LinkedIn" width="48" />
+                </a>
+              </div>
+            </div>
+          </div>
+          <div className="hero-grey">
+            <img src="./imgs/hero-image.png" alt="Adrian Twarog" width="60%" />
+          </div>
+        </section>
+        <section className="logos container">
+          <div className="marquee">
+            <div className="track">
+              <img src="./imgs/html.png" alt="HTML" width="128" />
+              <img src="./imgs/css.png" alt="CSS" width="128" />
+              <img src="./imgs/javascript.png" alt="JS" width="128" />
+              <img src="./imgs/aws.png" width="128" alt="AWS" />
+              <img src="./imgs/react.png" width="128" alt="React" />
+              <img src="./imgs/typescript.png" width="128" alt="TS" />
+              <img src="./imgs/haskell.png" width="128" alt="HS" />
+              <img src="./imgs/vscode.png" width="128" alt="VS Code" />
+              <img src="./imgs/python.png" width="128" alt="Python" />
+              <img src="./imgs/html.png" alt="HTML" width="128" />
+              <img src="./imgs/css.png" alt="CSS" width="128" />
+              <img src="./imgs/javascript.png" alt="JS" width="128" />
+              <img src="./imgs/aws.png" width="128" alt="AWS" />
+              <img src="./imgs/react.png" width="128" alt="React" />
+              <img src="./imgs/typescript.png" width="128" alt="TS" />
+              <img src="./imgs/haskell.png" width="128" alt="HS" />
+              <img src="./imgs/vscode.png" width="128" alt="VS Code" />
+              <img src="./imgs/python.png" width="128" alt="Python" />
+            </div>
+          </div>
+        </section>
+        <section id="skills" className="skills container">
+          <h2>
+            <small>About Me</small>
+            Skills
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <div className="holder-blue">
+            <div className="left-column">
+              <h3>Technical</h3>
+              <ul>
+                <li>Python</li>
+                <li>C</li>
+                <li>JavaScript</li>
+                <li>Haskell</li>
+                <li>SQL</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Shell</li>
+                <li>React</li>
+                <li>Typescript</li>
+              </ul>
+              <h3>Tools</h3>
+              <ul>
+                <li>Github</li>
+                <li>Gitlab</li>
+                <li>Wireshark</li>
+                <li>Figma</li>
+                <li>VSCode</li>
+                <li>Arduino</li>
+                <li>Canva</li>
+                <li>Jira & Confluence</li>
+              </ul>
+            </div>
+            <div className="right-column">
+              <h3>A bit about me</h3>
+              <p>
+                Hi I'm Rahul, a designer and developer, currently in the
+                penultimate year of my Undergraduate degree in Software
+                Engineering
+              </p>
+              <p>
+                I'm currently working on multiple AI based projects and learning
+                cloud based skills. I would love to contribute to the
+                ever-expanding world of AI.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section className="work-experience container">
+          <h2>
+            <small>Recent</small>
+            Work Experience
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
+          <div className="jobs">
+            <article>
+              <figure>
+                <div>
+                  <img
+                    src="./imgs/wpp1.jpg"
+                    alt="Workplace 1 - CodeUnity"
+                    width="100%"
+                  />
+                  <figcaption>Workplace - 1 CodeUnity</figcaption>
+                </div>
+              </figure>
+              <h3>Front End Web developer Intern @ CodeUnity</h3>
+              <div>July 2022 - August 2022</div>
+              <p>
+                Directed development of web application implementing React
+                Native framework, Designed and implemented responsive webpages
+                using HTML, CSS and JavaScript
+              </p>
+            </article>
+            <article>
+              <figure>
+                <div>
+                  <img
+                    src="./imgs/wp2.png"
+                    alt="Workplace 2 -HeadStarter"
+                    width="100%"
+                  />
+                  <figcaption>Workplace - HeadStarter AI</figcaption>
+                </div>
+              </figure>
+              <h3>Software engineering Fellow @ HeadStarter</h3>
+              <div>July 2024 - Present</div>
+              <p>
+                Upskilling myself by developing 7 AI based projects over seven
+                weeks
+              </p>
+            </article>
+          </div>
+        </section>
+        <section id="projects" className="bento container">
+          <h2>
+            <small> Previous </small>
+            Completed Projects
           </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+          <div className="bento-grid">
+            <a
+              href="https://github.com/Rahulmarkasserithodi/Redback-Autonomous-car"
+              className="bento-item"
+            >
+              <img src="./imgs/redback.jpeg" alt="BGCCI" width="100%" />
+            </a>
+            <a href="#" className="bento-item">
+              <img src="./imgs/align.png" alt="Churhview" width="100%" />
+            </a>
+            <a
+              href="https://github.com/Rahulmarkasserithodi/Football-match-predictor"
+              className="bento-item"
+            >
+              <img src="./imgs/plp.jpeg" alt="Harley" width="100%" />
+            </a>
+            <a
+              href="https://github.com/Rahulmarkasserithodi/Bank-Management-System"
+              className="bento-item"
+            >
+              <img src="./imgs/bms.jpeg" alt="Bunbury" width="100%" />
+            </a>
+            <a href="#" className="bento-item">
+              <img src="./imgs/kht.jpeg" alt="Running" width="100%" />
+            </a>
+            <a href="#" className="bento-item">
+              <img src="./imgs/post.png" alt="School" width="100%" />
+            </a>
+          </div>
+        </section>
+      </main>
+    </>
   );
 }
