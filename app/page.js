@@ -201,7 +201,7 @@ export default function Home() {
                 </div>
               </figure>
               <h3>Software engineering Fellow @ HeadStarter</h3>
-              <div>July 2024 - Present</div>
+              <div>July 2024 - September 2024</div>
               <p>
                 Upskilling myself by developing 7 AI based projects over seven
                 weeks
@@ -221,8 +221,11 @@ export default function Home() {
             >
               <img src="./imgs/redback.jpeg" alt="BGCCI" width="100%" />
             </a>
-            <a href="#" className="bento-item">
-              <img src="./imgs/align.png" alt="Churhview" width="100%" />
+            <a
+              href="https://pantry-tracker-xi-indol.vercel.app"
+              className="bento-item"
+            >
+              <img src="./imgs/pantry.png" alt="Churhview" width="100%" />
             </a>
             <a
               href="https://github.com/Rahulmarkasserithodi/Football-match-predictor"
@@ -234,13 +237,16 @@ export default function Home() {
               href="https://github.com/Rahulmarkasserithodi/Bank-Management-System"
               className="bento-item"
             >
-              <img src="./imgs/bms.jpeg" alt="Bunbury" width="100%" />
+              <img src="./imgs/bms.png" alt="Bunbury" width="100%" />
             </a>
             <a href="#" className="bento-item">
               <img src="./imgs/kht.jpeg" alt="Running" width="100%" />
             </a>
-            <a href="#" className="bento-item">
-              <img src="./imgs/post.png" alt="School" width="100%" />
+            <a
+              href="https://harmony-ai-sepia.vercel.app"
+              className="bento-item"
+            >
+              <img src="./imgs/harmony.png" alt="School" width="100%" />
             </a>
           </div>
         </section>
